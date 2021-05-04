@@ -1,0 +1,150 @@
+﻿@model ManaDeli.Models.DHModel
+
+@{
+    ViewBag.Title = "UpDateDH";
+    Layout = "~/Views/Dashboard/_AdminLayout.cshtml";
+}
+<style>
+    .error {
+        color: red;
+    }
+</style>@Html.Raw(TempData["msg"])
+<div class="section__content section__content--p30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <form class="form-horizontal" @Url.Action("UpdateDH", "QuanLy") method="post" role="form" enctype="multipart/form-data">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(model => model.Id)
+                    <div class="au-card m-b-30">
+                        <div class="au-card-inner">
+                            <h3 class="title-2 m-b-40">Cập nhật tài khoản</h3>
+
+                            <div class="form-group">
+                                <label for="cc-number" class="control-label mb-1">Mã vận đơn</label>
+                                <input id="mavandon" name="mavandon" type="text" class="form-control cc-number identified visa" value="@Model.mavandon" data-val="true">
+                                @Html.ValidationMessageFor(model => model.mavandon, "", new { @class = "error" })
+                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-number" class="control-label mb-1">Mã đơn hàng</label>
+                                <input id="madonhang" name="madonhang" type="text" class="form-control cc-number identified visa" value="@Model.madonhang" data-val="true">
+                                @Html.ValidationMessageFor(model => model.madonhang, "", new { @class = "error" })
+                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-number" class="control-label mb-1">Tên người gửi</label>
+                                <input id="tennguoigui" name="tennguoigui" type="text" class="form-control cc-number identified visa" value="@Model.tennguoigui" data-val="true">
+                                @Html.ValidationMessageFor(model => model.tennguoigui, "", new { @class = "error" })
+                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="cc-number" class="control-label mb-1">Tên người nhận</label>
+                                <input id="tennguoinhan" name="tennguoinhan" type="text" class="form-control cc-number identified visa" value="@Model.tennguoinhan" data-val="true">
+                                @Html.ValidationMessageFor(model => model.tennguoinhan, "", new { @class = "error" })
+                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                            </div><div class="form-group">
+                                <label for="cc-number" class="control-label mb-1">Sđt người nhận</label>
+                                <input id="sdtnguoinhan" name="sdtnguoinhan" type="text" class="form-control cc-number identified visa" value="@Model.sdtnguoinhan" data-val="true">
+                                @Html.ValidationMessageFor(model => model.sdtnguoinhan, "", new { @class = "error" })
+                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                            </div>
+                        </div><div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">Địa chỉ người nhận</label>
+                            <input id="diachinguoinhan" name="diachinguoinhan" type="text" class="form-control cc-number identified visa" value="@Model.diachinguoinhan" data-val="true">
+                            @Html.ValidationMessageFor(model => model.diachinguoinhan, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">Số lượng</label>
+                            <input id="soluong" name="soluong" type="text" class="form-control cc-number identified visa" value="@Model.soluong" data-val="true">
+                            @Html.ValidationMessageFor(model => model.soluong, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            @Html.ValidationMessageFor(model => model.dichvu, "", new { @class = "error" })
+                            <label for="cc-number" class="control-label mb-1">Dịch vụ</label>
+                            <select name="dichvu" id="dichvu" class="form-control">
+                                <option value="@Model.dichvu">Vui lòng cho dịch vụ</option>
+                                <option value="Gửi thường">Gửi thường</option>
+                                <option value="Gửi nhanh">Gửi nhanh</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">Giá trị</label>
+                            <input id="giatri" name="giatri" type="text" class="form-control cc-number identified visa" value="@Model.giatri" data-val="true">
+                            @Html.ValidationMessageFor(model => model.giatri, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">Loại hàng</label>
+                            <input id="loaihang" name="loaihang" type="text" class="form-control cc-number identified visa" value="@Model.loaihang" data-val="true">
+                            @Html.ValidationMessageFor(model => model.loaihang, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">Cân nặng</label>
+                            <input id="cannang" name="cannang" type="text" class="form-control cc-number identified visa" value="@Model.cannang" data-val="true">
+                            @Html.ValidationMessageFor(model => model.cannang, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">Ghi chú</label>
+                            <input id="ghichu" name="ghichu" type="text" class="form-control cc-number identified visa" value="@Model.ghichu" data-val="true">
+                            @Html.ValidationMessageFor(model => model.ghichu, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            @Html.ValidationMessageFor(model => model.trangthai, "", new { @class = "error" })
+                            <label for="cc-number" class="control-label mb-1">Trạng thái</label>
+                            <select name="trangthai" id="trangthai" class="form-control">
+                                <option value="@Model.trangthai">Vui lòng cho trạng thái</option>
+                                <option value="Chưa nhận">Chưa nhận</option>
+                                <option value="Đã nhận – Đang giao">Đã nhận – Đang giao</option>
+                                <option value="Đã giao">Đã giao</option>
+                                <option value="Đã nhận - Chưa giao">Đã nhận - Chưa giao</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">Phí ship</label>
+                            <input id="phiship" name="phiship" type="text" class="form-control cc-number identified visa" value="@Model.phiship" data-val="true">
+                            @Html.ValidationMessageFor(model => model.phiship, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">C.O.D</label>
+                            <input id="cod" name="cod" type="text" class="form-control cc-number identified visa" value="@Model.cod" data-val="true">
+                            @Html.ValidationMessageFor(model => model.cod, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="cc-number" class="control-label mb-1">Ngày tạo đơn</label>
+                            <input id="ngaytaodon" name="ngaytaodon" type="datetime" class="form-control cc-number identified visa" value="@Model.ngaytaodon" data-val="true">
+                            @Html.ValidationMessageFor(model => model.ngaytaodon, "", new { @class = "error" })
+                            <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                <div>
+                    <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                        <i class="fa fa-lock fa-lg"></i>&nbsp;
+                        <span id="payment-button-amount">Cập nhật</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="copyright">
+            <p>Copyright © 2021 Delivery Management ( ManaDeli ).</p>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

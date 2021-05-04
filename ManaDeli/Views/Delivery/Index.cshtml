@@ -1,0 +1,67 @@
+﻿
+@using ManaDeli.Models;
+@model IEnumerable<DONHANG>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Dashboard/_AdminLayout.cshtml";
+}
+<head>
+    <script src="~/js/jquery-3.3.1.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <link href="~/js/bootstrap.css" rel="stylesheet" />
+    @*<script src="~/js/DonHangShipper.js"></script>*@
+</head>
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Mã Đơn Hàng</th>
+                                    <th>Tên Người Gửi</th>
+                                    <th>Loại Hàng</th>
+                                    <th>Địa chỉ</th>
+                                    <th>Cân Nặng</th>
+                                    <th>Trạng Thái</th>
+                                    <th>Hành động</th>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Id)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.madonhang)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.tennguoigui)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.loaihang)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.diachinguoinhan)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.cannang)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.trangthai)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Chọn đơn", "ThemShipper", new { id = item.Id }) 
+                                    @*@Html.ActionLink("Chi tiết", "Details", new { id = item.Id })*@
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

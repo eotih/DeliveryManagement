@@ -1,0 +1,77 @@
+﻿@using ManaDeli.Models;
+@model IEnumerable<DONHANG>
+@{
+    ViewBag.Title = "Đang giao";
+    Layout = "~/Views/Dashboard/_AdminLayout.cshtml";
+    WebGrid grid = new WebGrid(Model); ;
+
+}
+@using ManaDeli.Models
+@{
+    ManaDeliEntities db = new ManaDeliEntities();
+}
+@{
+    var tong = db.DONHANGs.ToList().Count;
+    var cn = "Chưa nhận";
+    var chuannhan = db.DONHANGs.Where(n => n.trangthai == cn).ToList().Count;
+    var dg = "Đang giao";
+    var danggiao = db.DONHANGs.Where(n => n.trangthai == dg).ToList().Count;
+    var b = "Đã giao";
+    var dagiao = db.DONHANGs.Where(n => n.trangthai == b).ToList().Count;
+    var a = "Đã nhận - Chưa giao";
+    var chuagiao = db.DONHANGs.Where(n => n.trangthai == a).ToList().Count;
+}<div class="section__content section__content--p30">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="title-2 m-b-40">Quản lí đơn hàng (Chưa thanh toán)</h3>
+                <br />
+                <ul class="nav nav-pills nav-justified">
+                    <li class="nav-item"><a class="nav-link " href="@Url.Action("Tatca","QuanLy")">Tất cả (@tong)</a></li>
+                    <li class="nav-item"><a class="nav-link " href="@Url.Action("Chuanhan","QuanLy")">Chưa Nhận (@chuannhan)</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="@Url.Action("Danhanchuagiao","QuanLy")">Đã Nhận - Chưa Giao (@chuagiao)</a></li>
+                    <li class="nav-item"><a class="nav-link " href="@Url.Action("Danggiao","QuanLy")">Đã nhận – Đang giao (@danggiao)</a></li>
+                    <li class="nav-item"><a class="nav-link " href="@Url.Action("DaGiao","QuanLy")">Đã Giao (@dagiao)</a></li>
+
+                </ul>
+                <br />
+                @if (grid != null)
+                {
+                    <div id="list" class="table-responsive">
+                        @grid.GetHtml(
+                   tableStyle: "table table-bordered table-hover",
+                   headerStyle: "",
+                   footerStyle: "text-center",
+                   numericLinksCount: 10,
+                   mode: WebGridPagerModes.All, firstText: "Trang đầu", lastText: "Trang cuối",
+                   columns: grid.Columns(
+                      grid.Column("mavandon", "Mã vận đơn"),
+                       grid.Column("madonhang", "Mã đơn hàng"),
+                       grid.Column("tennguoigui", "Tên người gửi"),
+                       grid.Column("tennguoinhan", "Tên người nhận"),
+                       grid.Column("sdtnguoinhan", "SĐT người nhận"),
+                       grid.Column("diachinguoinhan", "Địa chỉ người nhận"),
+                       grid.Column("soluong", "Số lượng"),
+                       grid.Column("giatri", "Giá trị"),
+                       grid.Column("dichvu", "Dịch vụ"),
+                       grid.Column("loaihang", "Loại hàng"),
+                       grid.Column("cannang", "Cân nặng"),
+                       grid.Column("ghichu", "Ghi chú"),
+                       grid.Column("trangthai", "Trạng thái"),
+                       grid.Column("phiship", "Phí ship"),
+                       grid.Column("cod", "C.O.D"),
+                       grid.Column("ngaytaodon", "Ngày tạo đơn"),
+                       grid.Column("Shipper", "Shipper"),
+                       grid.Column(format: p => Html.ActionLink("Edit", "UpDateDH", new { id = p.Id }, new { @target = "_blank" })),
+                       grid.Column(format: p => Html.ActionLink("Delete", "Delete", new { id = p.Id }, new { @target = "_blank" }))
+                                  )
+                              )
+                    </div>
+
+                }
+            </div>
+        </div>
+        </div>
+    </div>
+
+

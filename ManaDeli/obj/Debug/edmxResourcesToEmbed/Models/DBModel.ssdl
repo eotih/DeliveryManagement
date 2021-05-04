@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManaDeliModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DONHANG">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="madonhang" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="mavandon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tennguoinhan" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="sdtnguoinhan" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="diachinguoinhan" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="soluong" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="dai" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="rong" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="cao" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="cannang" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="giatri" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="tienthuho" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="phiship" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="ghichu" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="thoigiangiao" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="ngaytaodon" Type="varchar" MaxLength="24" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hoten" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="phone" Type="int" Nullable="false" />
+    <Property Name="diachi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="quyen" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'ManaDeli.dbo.VanDon' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="VanDon">
+          <Property Name="STATUS_DATE" Type="datetime" />
+          <Property Name="TRA_CUU" Type="varchar" MaxLength="50" />
+          <Property Name="ORDER_NOTE" Type="varchar" MaxLength="50" />
+          <Property Name="BUU_CUC" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <EntityContainer Name="ManaDeliModelStoreContainer">
+    <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

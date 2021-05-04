@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Dashboard/_AdminLayout.cshtml";
+}
+@using ManaDeli.Models
+@{
+    ManaDeliEntities db = new ManaDeliEntities();
+}
+@Html.Raw(TempData["msg"])
+@{
+    var tong = db.DONHANGs.ToList().Count;
+    var cn = "Chưa nhận";
+    var chuanhan = db.DONHANGs.Where(n => n.trangthai == cn).ToList().Count;
+    var dg = "Đã nhận – Đang giao";
+    var danggiao = db.DONHANGs.Where(n => n.trangthai == dg).ToList().Count;
+    var b = "Đã Giao";
+    var dagiao = db.DONHANGs.Where(n => n.trangthai == b).ToList().Count;
+    var a = "Đã nhận - Chưa giao";
+    var chuagiao = db.DONHANGs.Where(n => n.trangthai == a).ToList().Count;
+    var moi = "";
+}
+<div class="section__content section__content--p30">
+    <div class="container-fluid">
+        @if (Session["quyen"].ToString() != "shipper")
+        {
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="overview-wrap">
+                        <h2 class="title-1">Tổng Quát</h2>
+                        <button class="au-btn au-btn-icon au-btn--blue">
+                            <i class="fa fa-bars"></i>TỔNG ĐƠN HÀNG : @tong
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row m-t-25">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c1">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>@chuanhan</h2>
+                                    <span>CHƯA NHẬN </span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <canvas id="widgetChart1"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c2">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>@danggiao</h2>
+                                    <span>ĐANG GIAO</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <canvas id="widgetChart2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c3">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-calendar-note"></i>
+                                </div>
+
+                                <div class="text">
+                                    <h2>@chuagiao</h2>
+                                    <span>CHƯA GIAO</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <canvas id="widgetChart3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c4">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="fa fa-th-large"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>
+                                        @dagiao
+                                    </h2>
+                                    <span>ĐÃ GIAO</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <canvas id="widgetChart4"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+        else 
+        {
+            <div class="col-lg-12">
+                <div class="au-card m-b-30">
+                    <div class="au-card-inner">
+                        <h1 class="title-4">
+                            Welcome back
+                            <span>@Session["hoten"].ToString()!</span>
+                        </h1>
+                        <br />
+                        <button onclick="location.href='@Url.Action("Index", "Delivery")'" class="au-btn au-btn-icon au-btn--blue">
+                            Chọn đơn
+                        </button>
+                        <button onclick="location.href='@Url.Action("Index", "Shipper")'" class="au-btn au-btn-icon au-btn--blue">
+                            Xem Đơn
+                        </button>
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <p>Copyright © 2021 Delivery Management ( ManaDeli ).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

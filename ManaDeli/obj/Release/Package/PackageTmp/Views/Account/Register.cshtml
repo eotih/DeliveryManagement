@@ -1,0 +1,115 @@
+﻿@model ManaDeli.Models.Account
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Account/_LayoutPage1.cshtml";
+}
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+<head>
+    <title>ManaDeli - Register</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="~/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="~/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/css/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="background-color: #666666;">
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form method="post" class="login100-form validate-form">
+                    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+                    {
+                        @Html.AntiForgeryToken()
+                        <span class="login100-form-title p-b-0">
+                            Register to continue
+                        </span>
+                        <span class="zmdi-label-alt-outline">Họ tên *</span> @Html.ValidationMessageFor(model => model.hoten, "", new { @class = "error" })
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="hoten">
+
+                        </div>
+
+                        <span class="zmdi-label-alt-outline">Email *</span> @Html.ValidationMessageFor(model => model.email, "", new { @class = "error" })
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <input class="input100" type="text" name="email">
+
+                        </div>
+                        <span class="zmdi-label-alt-outline">Tên đăng nhập *</span> @Html.ValidationMessageFor(model => model.username, "", new { @class = "error" })
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="username">
+
+                        </div>
+
+                        <span class="zmdi-label-alt-outline">Mật khẩu *</span>@Html.ValidationMessageFor(model => model.pass, "", new { @class = "error" })
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <input class="input100" type="password" name="pass">
+
+                        </div>
+                        <span class="zmdi-label-alt-outline">Số điện thoại *</span> @Html.ValidationMessageFor(model => model.phone, "", new { @class = "error" })
+                        <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            <input class="input100" type="text" name="phone">
+
+                        </div>
+
+                        <span class="zmdi-label-alt-outline">Địa chỉ *</span> @Html.ValidationMessageFor(model => model.diachi, "", new { @class = "error" })
+                        <div class="wrap-input100 validate-input" data-validate="Password is required">
+                            <input class="input100" type="text" name="diachi">
+
+                        </div>
+
+                        <div class="container-login100-form-btn">
+                            <button onclick="dangky()" class="login100-form-btn">
+                                Register
+                            </button>
+                        </div>
+
+                        <div class="text-center p-t-46 p-b-20">
+                            <span class="txt2">
+                                &copy; 2021 ManaDeli . All Rights Reserved | Design by EOTIH
+                            </span>
+                        </div>
+
+                    }
+                </form>
+                <div class="login100-more" style="background-image: url('https://assets.movecrop.com/uploads/cmsfile/Tintuc/tinh-trang-kho-kiem-soat-don-hang-la-mot-trong-nhung-kho-khan-ma-chu-kinh-doanh-gap-phai.png');">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+    <!--===============================================================================================-->
+    <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/js/main.js"></script>
+
+</body>

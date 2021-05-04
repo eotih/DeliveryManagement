@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ManaDeliModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DONHANG">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mavandon" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="madonhang" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tennguoinhan" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="sdtnguoinhan" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="diachinguoinhan" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="soluong" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="dai" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="rong" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="cao" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="cannang" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="giatri" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="dichvu" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="tienthuho" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="phiship" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="ghichu" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="thoigiangiao" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="ngaytaodon" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="trangthai" Type="varchar" MaxLength="24" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="hoten" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="254" Nullable="false" />
+    <Property Name="username" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="phone" Type="int" Nullable="false" />
+    <Property Name="diachi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="quyen" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VANDON">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status_date" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="tra_cuu" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="order_note" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="buu_cuu" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ManaDeliModelStoreContainer">
+    <EntitySet Name="DONHANG" EntityType="Self.DONHANG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VANDON" EntityType="Self.VANDON" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

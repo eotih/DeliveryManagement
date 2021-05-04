@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ManaDeliModelStoreContainer" CdmEntityContainer="ManaDeliEntities">
+    <EntitySetMapping Name="DONHANG">
+      <EntityTypeMapping TypeName="ManaDeliModel.DONHANG">
+        <MappingFragment StoreEntitySet="DONHANG">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="madonhang" ColumnName="madonhang" />
+          <ScalarProperty Name="mavandon" ColumnName="mavandon" />
+          <ScalarProperty Name="tennguoinhan" ColumnName="tennguoinhan" />
+          <ScalarProperty Name="sdtnguoinhan" ColumnName="sdtnguoinhan" />
+          <ScalarProperty Name="diachinguoinhan" ColumnName="diachinguoinhan" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="dai" ColumnName="dai" />
+          <ScalarProperty Name="rong" ColumnName="rong" />
+          <ScalarProperty Name="cao" ColumnName="cao" />
+          <ScalarProperty Name="cannang" ColumnName="cannang" />
+          <ScalarProperty Name="giatri" ColumnName="giatri" />
+          <ScalarProperty Name="tienthuho" ColumnName="tienthuho" />
+          <ScalarProperty Name="phiship" ColumnName="phiship" />
+          <ScalarProperty Name="ghichu" ColumnName="ghichu" />
+          <ScalarProperty Name="thoigiangiao" ColumnName="thoigiangiao" />
+          <ScalarProperty Name="ngaytaodon" ColumnName="ngaytaodon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TAIKHOAN">
+      <EntityTypeMapping TypeName="ManaDeliModel.TAIKHOAN">
+        <MappingFragment StoreEntitySet="TAIKHOAN">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="hoten" ColumnName="hoten" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="diachi" ColumnName="diachi" />
+          <ScalarProperty Name="quyen" ColumnName="quyen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

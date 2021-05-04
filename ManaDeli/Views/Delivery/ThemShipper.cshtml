@@ -1,0 +1,42 @@
+﻿@model ManaDeli.Models.DONHANG
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Dashboard/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.Id)
+    <div class="col-lg-12">
+        <div class="au-card m-b-30">
+            <div class="au-card-inner">
+                <h3 class="title-2 m-b-40">Xác nhận đơn hàng</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="Shipper">Tên đăng nhập</label>
+                        <input type="text" class="form-control" name="Shipper" id="Shipper" value="@Session["username"].ToString()" />
+                    </div>
+                </form>
+            </div>
+            <div>
+                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                    <span id="payment-button-amount">Xác nhận đơn hàng</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>*@
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<ManaDeli.Models.DONHANG>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Dashboard/_AdminLayout.cshtml";
+}
+@Html.Raw(TempData["msg"])
+<div class="section__content section__content--p30">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="overview-wrap">
+                    <h2 class="title-1">Nhập Đơn Excel</h2>
+                    @using (Html.BeginForm("ExportToExcel", "Order", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <button class="btn btn-success btn-sm">
+                            <i class="zmdi zmdi-download" type="file"></i>  Down File Mẩu
+                        </button>
+                    }
+
+                    @using (Html.BeginForm("ImportFromExcel", "Order", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.ValidationSummary();
+                        <input type="file" name="postedFile" />
+                        <button class="btn btn-primary btn-sm" id="upload">
+                            <i class="zmdi zmdi-upload" type="file"></i>  Tải lên
+                        </button>
+                    }
+
+                </div>
+            </div>
+        </div></br>
+        <div class="card">
+            <div class="card-header">
+                <strong> <font color="red">Lưu ý:</font> </strong> Khách hàng bắt đầu nhập từ cột Mã đơn hàng </br>
+                <strong> <font color="green">Hướng dẫn sử dụng:</font> </strong> </br>B1: Down file mẩu</br>
+                B2: bấm " choose file "</br>
+                B3: bấm tải lên
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    $("#upload").click(function () {
+        debugger;
+        if (window.FormData == undefined)
+            alert("Error: FormData is undefined");
+
+        else {
+            var fileUpload = $("#postedFile").get(0);
+            var files = fileUpload.files;
+
+            var fileData = new FormData();
+
+            fileData.append(files[0].name, files[0]);
+
+            $.ajax({
+                url: '/Order/ImportFromExcel',
+                type: 'post',
+                datatype: 'json',
+                contentType: false,
+                processData: false,
+                async: false,
+                data: fileData,
+                success: function (response) {
+                    alert("File uploaded successfully");
+                    alert(response);
+                }
+            });
+        }
+
+    });
+</script>
+
+

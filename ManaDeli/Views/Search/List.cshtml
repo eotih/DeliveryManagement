@@ -1,0 +1,23 @@
+﻿@using ManaDeli.DAO
+@using ManaDeli.Models
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Dashboard/_AdminLayout.cshtml";
+    string key = Request.QueryString["key"];
+    List<DONHANG> result = new List<DONHANG>();
+}
+<h2>moi</h2>
+@{
+    if (key == "" | key.Length < 3)
+    {
+        <h1>Vui lòng nhập mã vận đơn</h1>
+    }
+    else
+    {
+        result = new DonHang().SearchByKey(key);
+        foreach (var item in result)
+        {
+            <p>@item.tennguoinhan</p>
+        }
+    }
+}

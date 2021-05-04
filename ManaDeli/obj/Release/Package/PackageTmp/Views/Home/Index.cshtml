@@ -1,0 +1,293 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title></title>
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <link rel="shortcut icon" href="https://www.eotihvn.com/asset/1/images/icons/icon-48x48.png" />
+
+    <link rel="stylesheet" href="https://www.eotihvn.com/asset/5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://www.eotihvn.com/asset/5/css/style.css">
+    <link rel="stylesheet" type="text/css" href="https://www.eotihvn.com/asset/5/css/accordiancss.css">
+    <link rel="stylesheet" type="text/css" href="https://www.eotihvn.com/asset/5/css/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="https://www.eotihvn.com/asset/5/css/owl.theme.default.min.css">
+    <link rel="stylesheet" type="text/css" href="https://www.eotihvn.com/asset/5/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://www.eotihvn.com/asset/5/css/1.css">
+    <link rel="stylesheet" type="text/css" href="https://www.eotihvn.com/asset/5/css/css.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900&display=swap&subset=vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:200,300,400,500,600,700,800,900&display=swap&subset=vietnamese" rel="stylesheet">
+
+    <script async="" src="https://www.eotihvn.com/asset/5/js/analytics.js"></script>
+    <script src="https://www.eotihvn.com/asset/5/js/jquery.min.js"></script>
+    <script src="https://www.eotihvn.com/asset/5/js/smoothscroll.js"></script>
+    <script type="text/javascript">
+          (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+              (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+              m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+          })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+          ga('create', 'UA-96875843-3', 'auto');
+          ga('send', 'pageview');
+    </script>
+    <style type="text/css">
+        a.nav-link.learn-more-btn {
+            white-space: nowrap;
+        }
+
+        a.navbar-brand-logo {
+            font-weight: bold;
+            font-size: 33px;
+        }
+
+        .strategy-card-icon-section img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-section {
+            background-color: #fbfbfb;
+        }
+
+        span.text pre {
+            color: #191847;
+            font-family: Cabin;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .block-23 ul li {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-header navbar-mobile">
+        <div class="navbar-container container">
+
+            <div class="navbar-brand">
+                <a class="navbar-brand-logo" href="#">
+                    <img src="~/images/manadeli.png" />
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav menu-navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <p class="nav-link-menu">Trang chủ</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">
+                            <p class="nav-link-menu">Dịch vụ</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <p class="nav-link-menu">Liên hệ</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", null, new { area = string.Empty, controller = "Search" }, Request.Url.Scheme)">
+                            <p class="nav-link-menu">Tra cứu mã vận đơn</p>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link learn-more-btn" href="@Url.Action("Register", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)">Đăng ký làm shipper</a>
+                    </li>
+                </ul>
+
+                
+            </div>
+        </div>
+    </nav>
+
+    <div id="top"></div>
+
+    <div class="wrapper">
+        <div class="header">
+            <div class="container header-container">
+                <div class="col-lg-6 header-img-section">
+                    <img src="https://www.eotihvn.com/asset/5/images/header.png">
+                </div>
+                <div class="col-lg-6 header-title-section">
+                    <h1 class="header-title">Dịch vụ giao hàng chuyên nghiệp  <strong class="text-primary"></strong></h1>
+                    <p class="header-title-text">Dịch vụ giao hàng thương mại điện tử</p>
+                    <div class="learn-more-btn-section">
+                        <a class="nav-link learn-more-btn" href="@Url.Action("Login", null, new { area = string.Empty, controller = "Account" }, Request.Url.Scheme)">Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="courses"></div>
+
+
+        <div id="services">
+            <div class="container">
+                <div class="row">
+                    <div class="strategy-section">
+                        <div class="pricing-title">
+                            <h2> Services</h2>
+                            <p>Dịch vụ cung cấp</p>
+                        </div>
+                        <div class="container strategy-container">
+                            <div class="row" style="margin-top: 35px;">
+                                <div class="col-lg-4 col-md-6 col-xs-8">
+                                    <div class="strategy-card">
+                                        <div class="strategy-card-icon-section">
+                                            <img src="https://viettelpost.com.vn/wp-content/uploads/2021/01/ic_vcn_red.svg">
+                                        </div>
+                                        <h2 style="text-align: center; margin: 10px 0;">NHANH - AN TOÀN - CHÍNH XÁC</h2>
+                                        <p style="text-align: center">Chuyên cung cấp các dịch vụ chuyển phát Nhanh...</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-xs-8">
+                                    <div class="strategy-card">
+                                        <div class="strategy-card-icon-section">
+                                            <img src="https://viettelpost.com.vn/wp-content/uploads/2021/01/ic_vtk_red.svg">
+                                        </div>
+                                        <h2 style="text-align: center; margin: 10px 0">AN TÂM - TIẾT KIỆM - KỊP THỜI</h2>
+                                        <p style="text-align: center">Chuyên cung cấp các dịch vụ chuyển phát Tiết Kiệm...</p>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-xs-8">
+                                    <div class="strategy-card">
+                                        <div class="strategy-card-icon-section">
+                                            <img src="https://viettelpost.com.vn/wp-content/uploads/2021/01/ic_vht_red.svg">
+                                        </div>
+                                        <h2 style="text-align: center; margin: 10px 0">GIAO NGAY TRONG 24H</h2>
+                                        <p style="text-align: center">Chuyên cung cấp các dịch vụ chuyển phát Hỏa Tốc...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="download"></div>
+
+        <div class="footer-section" id="contact">
+            <div class="footer-section-bg-graphics">
+
+            </div>
+
+            <div class="container footer-container">
+                <div class="col-lg-4 col-md-6 footer-logo">
+                    <h3 class="footer-subsection-title">Thành Viên Trong ManaDeli</h3>
+                    <p class="footer-subsection-text">Lê Trọng Hiếu - 185050604 (Admin)</p>
+                    <p class="footer-subsection-text">Nguyễn Duy Thành- 185050787 (Manager)</p>
+                    <p class="footer-subsection-text">Vương Nhật Khang - 185050390 (Shipper)</p>
+
+                </div>
+                <div class="col-lg-4 col-md-6 footer-subsection">
+                    <div class="footer-subsection-2-1">
+                        <h3 class="footer-subsection-title">Giới thiệu</h3>
+                        <p class="footer-subsection-text">Công ty Mana Deli tại Việt Nam được thành lập với sứ mệnh phục vụ nhu cầu vận chuyển chuyên nghiệp của các đối tác Thương mại điện tử trên toàn quốc. </p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 footer-subsection">
+                    <h3 class="footer-subsection-title">Liên hệ</h3>
+                    <ul class="footer-subsection-list">
+                        <li><span class="text">Địa chỉ: 141 - 145 Điện Biên Phủ, P. 15, Q. Bình Thạnh, TP.HCM </span></li>
+                        <li><span class="text">Phone: 03.9797.1798 ( Hiếu )<pre></pre></span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container footer-credits">
+                <p>&copy;
+                <script>document.write(new Date().getFullYear());</script> <a href="https://www.facebook.com/100053162557645" target="_blank" title=""> </a>™. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.eotihvn.com/asset/5/js/jquery.min(1).js"></script>
+    <script src="https://www.eotihvn.com/asset/5/js/popper.min.js"></script>
+    <script src="https://www.eotihvn.com/asset/5/js/bootstrap.min.js"></script>
+    <script src="https://www.eotihvn.com/asset/5/js/owl.carousel.js"></script>
+    <script src="https://www.eotihvn.com/asset/5/js/accordianscript.js"></script>
+
+    <script type="text/javascript">
+                $(window).scroll(function() {
+                    if ($(this).scrollTop() > 20) {
+                      $('#navbar').addClass('header-scrolled');
+                    } else {
+                      $('#navbar').removeClass('header-scrolled');
+                    }
+                  });
+    </script>
+    <script>
+            $(document).ready(function(){
+              $(".owl-vertical-slider").owlCarousel({
+                items:1,
+                loop:true,
+                nav:true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:false,
+                responsiveClass:true,
+                animateIn: 'fadeIn',
+                animateOut: 'fadeOut',
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:1
+                    },
+                    1000:{
+                        items:1
+                    }
+                }
+              });
+            });
+    </script>
+    <script>
+            $(document).ready(function(){
+              $(".owl-reviews-slider").owlCarousel({
+                items:1,
+                loop:true,
+                nav:true,
+                autoplay:true,
+                autoplayTimeout:5000,
+                autoplayHoverPause:false,
+                responsiveClass:true,
+                responsive:{
+                    0:{
+                        items:1
+                    },
+                    600:{
+                        items:1
+                    },
+                    1000:{
+                        items:1
+                    }
+                }
+              });
+            });
+    </script>
+</body>
+</html>
